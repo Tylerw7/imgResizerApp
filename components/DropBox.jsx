@@ -73,16 +73,16 @@ const DropBox = () => {
             <h4>Download Resized Images</h4>
             {downloadLinks.map((link, index) => (
               <div key={index}>
-                <button 
-                  variant="contained" 
-                  component="a" 
-                  href={link} 
-                  target="_blank" 
+                <Button
+                  variant="outlined"
+                  component="a"
+                  href={link}
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className='button'
+                  
                 >
                   Download
-                </button>
+                </Button>
               </div>
             ))}
           </div>
