@@ -15,6 +15,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import { Link } from 'react-router-dom';
+import './Navbar.jsx'
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
@@ -59,7 +61,7 @@ const Navbar = () => {
         {DrawerList}
       </Drawer>
          <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{backgroundColor: '#383838'}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -74,7 +76,15 @@ const Navbar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
-          <Button color="inherit">Login</Button>
+            <Box>
+              <Button component={Link} to="/" color="inherit">Home</Button>
+            </Box>
+            <Box>
+            <Button component={Link} to="/resizer" color="inherit">
+              Resizer
+            </Button>
+            </Box>
+          <Button component={Link} to='/login' color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </Box>
