@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { TextField, Button, Box, Typography } from '@mui/material';
+import Navbar from '../shared/Navbar';
 
 
 
@@ -25,10 +26,9 @@ import { TextField, Button, Box, Typography } from '@mui/material';
         }
     
         try {
-          const response = await fetch('https://your-backend-url.com/api/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password }),
+          const response = await axios.post('https://your-backend-url.com/api/login', {
+            email,
+            password
           });
     
           const data = await response.json();
@@ -48,15 +48,19 @@ import { TextField, Button, Box, Typography } from '@mui/material';
 
 
   return (
+    <>
+    <Navbar />
+    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
     <Box
     sx={{
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      minHeight: '100vh',
-      width: '100%',
+      height: '60%',
+      width: '25rem',
       padding: 2,
+      boxShadow: 10,
     }}
   >
     <Typography variant="h4" gutterBottom>
@@ -99,6 +103,8 @@ import { TextField, Button, Box, Typography } from '@mui/material';
       </Button>
     </form>
   </Box>
+  </div>
+  </>
   )
 }
 
