@@ -106,12 +106,6 @@ const DropBox = () => {
                 )}
             </div>
 
-            {/* Resize Button */}
-            <Button onClick={handleResizeAndDownload} disabled={!selectedImage} variant="contained" color="primary">
-                Resize & Download
-            </Button>
-
-            {/* Download Links */}
             {downloadLinks.length > 0 && (
                 <div className="download-links">
                     <h4>Download Resized Images</h4>
@@ -122,6 +116,15 @@ const DropBox = () => {
                     ))}
                 </div>
             )}
+
+
+            {/* Resize Button */}
+            <Button onClick={handleResizeAndDownload} disabled={!selectedImage} variant="contained" color="primary">
+                Resize & Download
+            </Button>
+
+            {/* Download Links */}
+            
         </div>
     );
 };

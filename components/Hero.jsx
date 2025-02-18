@@ -29,7 +29,7 @@ const Hero = () => {
     >
       <Container maxWidth="md" sx={{ position: "relative", zIndex: 1 }}>
         <Typography variant="h2" fontWeight="bold" gutterBottom>
-          Welcome to Our App
+          Resize images quicker!
         </Typography>
         <Typography variant="h6" mb={3}>
           Create amazing experiences with our platform.
